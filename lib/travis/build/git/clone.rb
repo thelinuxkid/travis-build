@@ -49,7 +49,7 @@ module Travis
           end
 
           def branch
-            data.branch.shellescape
+            data.branch.to_s == '' ? 'master' : data.branch.shellescape
           end
 
           def quiet?
